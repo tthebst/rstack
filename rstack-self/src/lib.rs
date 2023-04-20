@@ -366,6 +366,7 @@ fn child_trace(options: &RawOptions) -> result::Result<Vec<RawThread>, String> {
     match rstack::TraceOptions::new()
         .thread_names(true)
         .snapshot(options.snapshot)
+        .symbols(true)
         .trace(parent)
     {
         Ok(process) => Ok(process
